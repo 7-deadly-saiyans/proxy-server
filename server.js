@@ -82,12 +82,21 @@ app.get('/home/newest', (request, response) => {
   );
 });
 
-//route for comment section
+//routes for comment section
 app.get('/house/comments/:id', (request, response) => {
   http.get(
     'http://localhost:3003/house/comments/' + request.params.id,
     parser(response)
   );
+});
+
+app.put('/comments/:id', (request, response) => {
+  http.request({
+    method: 'PUT',
+    host: 'localhost',
+    port: 3003,
+    path: '/comments/' + request.params.id
+  }, parser(response)).end();
 });
 
 app.listen(3000, () => console.log('listening on port 3000'));
