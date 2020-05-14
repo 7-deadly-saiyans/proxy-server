@@ -36,4 +36,24 @@ app.get('/:id?', (request, response) => {
   });
 });
 
+app.get('/mortgageId/:id', (request, response) => {
+  http.get('http://localhost:3004/mortgageId/' + request.params.id, res => {
+    const data = [];
+    res.on('data', data.push.bind(data));
+    res.on('end', () => {
+      response.end(data.join(''));
+    });
+  });
+});
+
+app.get('/mortgageRate/:zip', (request, response) => {
+  http.get('http://localhost:3004/mortgageRate/' + request.params.zip, res => {
+    const data = [];
+    res.on('data', data.push.bind(data));
+    res.on('end', () => {
+      response.end(data.join(''));
+    });
+  });
+});
+
 app.listen(3000, () => console.log('listening on port 3000'));
