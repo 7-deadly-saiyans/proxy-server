@@ -7,11 +7,11 @@ app.get('/:id?', (request, response) => {
   let nComponents = 4;
   while (nComponents) {
     bundle.unshift(new Promise((resolve, reject) => {
-      http.get('http://localhost:300' + nComponents-- + '/bundle.js', response => {
+      http.get('http://localhost:300' + nComponents-- + '/bundle.js', res => {
         const data = [];
-        response.on('data', data.push.bind(data));
-        response.on('error', reject);
-        response.on('end', () => {
+        res.on('data', data.push.bind(data));
+        res.on('error', reject);
+        res.on('end', () => {
           resolve(data.join(''));
         });
       });
