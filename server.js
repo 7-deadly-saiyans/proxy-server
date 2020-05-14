@@ -2,7 +2,7 @@ const http = require('http');
 const express = require('express');
 const app = express();
 
-app.get('/', (request, response) => {
+app.get('/:id?', (request, response) => {
   const bundle = [];
   let nComponents = 4;
   while (nComponents) {
