@@ -8,7 +8,7 @@ app.get('/', (request, response) => {
   while (nComponents) {
     bundle.unshift(new Promise((resolve, reject) => {
       http.get('http://localhost:300' + nComponents-- + '/bundle.js', response => {
-        let data = [];
+        const data = [];
         response.on('data', data.push.bind(data));
         response.on('error', reject);
         response.on('end', () => {
