@@ -1,0 +1,22 @@
+{
+  "name": "proxy-server",
+  "version": "0.0.0",
+  "description": "proxy server for trulia components",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew-cadwallader/proxy-server.git"
+  },
+  "author": "andrew-cadwallader",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrew-cadwallader/proxy-server/issues"
+  },
+  "homepage": "https://github.com/andrew-cadwallader/proxy-server#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
